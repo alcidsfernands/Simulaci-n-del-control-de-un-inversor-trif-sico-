@@ -1,0 +1,403 @@
+******************************************************************************
+             TMS320C2000 Linker PC v6.4.2                      
+******************************************************************************
+>> Linked Thu May 12 01:38:28 2016
+
+OUTPUT FILE NAME:   <HVACI_Sensorless_2833x.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00009912
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+PAGE 0:
+  BEGIN                 00000000   00000002  00000000  00000002  RWIX
+  BOOT_RSVD             00000002   0000004e  00000000  0000004e  RWIX
+  RAMM0                 00000050   000003b0  00000000  000003b0  RWIX
+  RAML0                 00008000   00001000  00000188  00000e78  RWIX
+  RAML1                 00009000   00001800  000009d8  00000e28  RWIX
+  RAML2                 0000b000   00001000  00000000  00001000  RWIX
+  RAML3                 0000c000   00001000  00000000  00001000  RWIX
+  ZONE7A                00200000   0000fc00  00000000  0000fc00  RWIX
+  CSM_RSVD              0033ff80   00000076  00000000  00000076  RWIX
+  CSM_PWL               0033fff8   00000008  00000000  00000008  RWIX
+  ADC_CAL               00380080   00000009  00000000  00000009  RWIX
+  IQTABLES              003fe000   00000b50  00000000  00000b50  RWIX
+  IQTABLES2             003feb50   0000008c  00000000  0000008c  RWIX
+  FPUTABLES             003febdc   000006a0  00000000  000006a0  RWIX
+  BOOTROM               003ff27c   00000d44  00000000  00000d44  RWIX
+  RESET                 003fffc0   00000002  00000000  00000002  RWIX
+
+PAGE 1:
+  RAMM1                 00000400   00000400  00000380  00000080  RWIX
+  RAML4                 0000c000   00001000  0000049c  00000b64  RWIX
+  RAML5                 0000d000   00001000  0000000c  00000ff4  RWIX
+  RAML6                 0000e000   00001000  00000000  00001000  RWIX
+  RAML7                 0000f000   00001000  00000000  00001000  RWIX
+  ZONE7B                0020fc00   00000400  00000000  00000400  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.cinit     0    00008000    00000188     
+                  00008000    00000172     HVACI_Scalar.obj (.cinit)
+                  00008172    0000000a     rts2800_fpu32.lib : exit.obj (.cinit)
+                  0000817c    00000005                       : _lock.obj (.cinit:__lock)
+                  00008181    00000005                       : _lock.obj (.cinit:__unlock)
+                  00008186    00000002     --HOLE-- [fill = 0]
+
+.text      0    00009000    000009d8     
+                  00009000    00000413     HVACI_Scalar.obj (.text)
+                  00009413    000001ea     HVACI_Scalar.obj (.text:retain)
+                  000095fd    000001bf     HVACI_Scalar-DevInit_F2833x.obj (.text)
+                  000097bc    00000088     rts2800_fpu32.lib : fs_div.obj (.text)
+                  00009844    00000083                       : fd_mpy.obj (.text)
+                  000098c7    0000004b     DLOG4CHC.obj (.text)
+                  00009912    00000046     rts2800_fpu32.lib : boot.obj (.text)
+                  00009958    0000001f                       : fd_tol.obj (.text)
+                  00009977    0000001c                       : fs_tofd.obj (.text)
+                  00009993    00000019                       : args_main.obj (.text)
+                  000099ac    00000019                       : exit.obj (.text)
+                  000099c5    0000000a     HVACI_Scalar-DevInit_F2833x.obj (.text:retain)
+                  000099cf    00000009     rts2800_fpu32.lib : _lock.obj (.text)
+
+.pinit     0    00008000    00000000     UNINITIALIZED
+
+.stack     1    00000400    00000380     UNINITIALIZED
+                  00000400    00000380     --HOLE--
+
+DLOG       1    0000c000    00000320     UNINITIALIZED
+                  0000c000    00000320     DLOG4CHC.obj (DLOG)
+
+.ebss      1    0000c320    0000017c     UNINITIALIZED
+                  0000c320    00000004     rts2800_fpu32.lib : exit.obj (.ebss)
+                  0000c324    00000002                       : _lock.obj (.ebss:__lock)
+                  0000c326    00000002                       : _lock.obj (.ebss:__unlock)
+                  0000c328    00000018     --HOLE--
+                  0000c340    0000015c     HVACI_Scalar.obj (.ebss)
+
+.econst    1    0000d000    0000000c     
+                  0000d000    0000000c     HVACI_Scalar.obj (.econst)
+
+.reset     0    003fffc0    00000002     DSECT
+                  003fffc0    00000002     rts2800_fpu32.lib : boot.obj (.reset)
+
+csm_rsvd   0    0033ff80    00000000     DSECT
+
+csmpasswds 
+*          0    0033fff8    00000000     DSECT
+
+
+GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
+
+address     data page           name
+--------    ----------------    ----
+00000400      10 (00000400)     __stack
+
+0000c320     30c (0000c300)     ___TI_cleanup_ptr
+0000c322     30c (0000c300)     ___TI_dtors_ptr
+0000c324     30c (0000c300)     __lock
+0000c326     30c (0000c300)     __unlock
+
+0000c340     30d (0000c340)     _BackTicker
+0000c341     30d (0000c340)     _ClosedLoopFlag
+0000c342     30d (0000c340)     _lsw
+0000c343     30d (0000c340)     _TripFlagDMC
+0000c344     30d (0000c340)     _DlogCh1
+0000c345     30d (0000c340)     _EnableFlag
+0000c346     30d (0000c340)     _SpeedLoopPrescaler
+0000c347     30d (0000c340)     _DlogCh4
+0000c348     30d (0000c340)     _SpeedLoopCount
+0000c349     30d (0000c340)     _DlogCh3
+0000c34a     30d (0000c340)     _SerialCommsTimer
+0000c34b     30d (0000c340)     _DlogCh2
+0000c34c     30d (0000c340)     _IsrTicker
+0000c34e     30d (0000c340)     _SpeedRef
+0000c350     30d (0000c340)     _A_Task_Ptr
+0000c352     30d (0000c340)     _Alpha_State_Ptr
+0000c354     30d (0000c340)     _C_Task_Ptr
+0000c356     30d (0000c340)     _T
+0000c358     30d (0000c340)     _B_Task_Ptr
+0000c35a     30d (0000c340)     _VTimer1
+0000c35e     30d (0000c340)     _VTimer2
+0000c362     30d (0000c340)     _cap1
+0000c366     30d (0000c340)     _VTimer0
+0000c36a     30d (0000c340)     _eQEP
+0000c370     30d (0000c340)     _pwmdac1
+0000c376     30d (0000c340)     _pwm1
+
+0000c380     30e (0000c380)     _eCAP
+0000c38e     30e (0000c380)     _ePWM
+0000c39c     30e (0000c380)     _TrigSel
+0000c3ac     30e (0000c380)     _ACQPS
+
+0000c3c0     30f (0000c3c0)     _rc1
+0000c3d0     30f (0000c3c0)     _ChSel
+0000c3e0     30f (0000c3c0)     _vhz1
+
+0000c400     310 (0000c400)     _speed2
+0000c412     310 (0000c400)     _qep1
+0000c424     310 (0000c400)     _speed1
+
+0000c440     311 (0000c440)     _dlog
+0000c456     311 (0000c440)     _pi_spd
+
+0000c480     312 (0000c480)     _svgen_mf1
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+page  address   name               
+----  -------   ----               
+0     00009000  .text              
+0     000099ac  C$$EXIT            
+0     00009844  FD$$MPY            
+0     00009958  FD$$TOL            
+0     000097bc  FS$$DIV            
+0     00009977  FS$$TOFD           
+0     0000933a  _A0                
+0     0000937d  _A1                
+0     0000938e  _A2                
+0     00009394  _A3                
+1     0000c3ac  _ACQPS             
+n/a   UNDEFED   _ADC_cal           
+1     0000c350  _A_Task_Ptr        
+n/a   UNDEFED   _AdcRegs           
+1     0000c352  _Alpha_State_Ptr   
+0     00009351  _B0                
+0     0000939a  _B1                
+0     000093a0  _B2                
+0     000093a6  _B3                
+1     0000c358  _B_Task_Ptr        
+1     0000c340  _BackTicker        
+0     00009367  _C0                
+0     000093ac  _C1                
+0     000093c1  _C2                
+0     000093c7  _C3                
+1     0000c354  _C_Task_Ptr        
+1     0000c3d0  _ChSel             
+1     0000c341  _ClosedLoopFlag    
+n/a   UNDEFED   _CpuTimer0Regs     
+n/a   UNDEFED   _CpuTimer1Regs     
+n/a   UNDEFED   _CpuTimer2Regs     
+0     000098c7  _DLOG_4CH_init     
+0     000098d2  _DLOG_4CH_update   
+n/a   UNDEFED   _DSP28x_usDelay    
+0     000095fd  _DeviceInit        
+1     0000c344  _DlogCh1           
+1     0000c34b  _DlogCh2           
+1     0000c349  _DlogCh3           
+1     0000c347  _DlogCh4           
+n/a   UNDEFED   _ECap1Regs         
+n/a   UNDEFED   _ECap2Regs         
+n/a   UNDEFED   _ECap3Regs         
+n/a   UNDEFED   _ECap4Regs         
+n/a   UNDEFED   _ECap5Regs         
+n/a   UNDEFED   _ECap6Regs         
+n/a   UNDEFED   _EPwm1Regs         
+n/a   UNDEFED   _EPwm2Regs         
+n/a   UNDEFED   _EPwm3Regs         
+n/a   UNDEFED   _EPwm4Regs         
+n/a   UNDEFED   _EPwm5Regs         
+n/a   UNDEFED   _EPwm6Regs         
+n/a   UNDEFED   _EQep1Regs         
+n/a   UNDEFED   _EQep2Regs         
+1     0000c345  _EnableFlag        
+n/a   UNDEFED   _GpioCtrlRegs      
+n/a   UNDEFED   _GpioDataRegs      
+0     000093cd  _HVDMC_Protection  
+0     000099c5  _ISR_ILLEGAL       
+1     0000c34c  _IsrTicker         
+0     00009413  _MainISR           
+0     000097a7  _MemCopy           
+0     00009744  _PLLset            
+0     00009767  _PieCntlInit       
+n/a   UNDEFED   _PieCtrlRegs       
+n/a   UNDEFED   _PieVectTable      
+0     00009786  _PieVectTableInit  
+1     0000c34a  _SerialCommsTimer  
+1     0000c348  _SpeedLoopCount    
+1     0000c346  _SpeedLoopPrescaler
+1     0000c34e  _SpeedRef          
+n/a   UNDEFED   _SysCtrlRegs       
+1     0000c356  _T                 
+1     0000c39c  _TrigSel           
+1     0000c343  _TripFlagDMC       
+1     0000c366  _VTimer0           
+1     0000c35a  _VTimer1           
+1     0000c35e  _VTimer2           
+0     0000973c  _WDogDisable       
+n/a   UNDEFED   __IQ24div          
+n/a   UNDEFED   __IQ24sin          
+1     00000780  __STACK_END        
+abs   00000380  __STACK_SIZE       
+1     0000c320  ___TI_cleanup_ptr  
+1     0000c322  ___TI_dtors_ptr    
+abs   ffffffff  ___binit__         
+abs   ffffffff  ___c_args__        
+0     00008000  ___cinit__         
+0     000099d8  ___etext__         
+abs   ffffffff  ___pinit__         
+0     00009000  ___text__          
+0     00009993  __args_main        
+1     0000c324  __lock             
+0     000099d7  __nop              
+0     000099d3  __register_lock    
+0     000099cf  __register_unlock  
+1     00000400  __stack            
+1     0000c326  __unlock           
+0     000099ac  _abort             
+0     00009912  _c_int00           
+1     0000c362  _cap1              
+1     0000c440  _dlog              
+1     0000c380  _eCAP              
+1     0000c38e  _ePWM              
+1     0000c36a  _eQEP              
+0     000099ae  _exit              
+1     0000c342  _lsw               
+0     00009000  _main              
+1     0000c456  _pi_spd            
+1     0000c376  _pwm1              
+1     0000c370  _pwmdac1           
+1     0000c412  _qep1              
+1     0000c3c0  _rc1               
+1     0000c424  _speed1            
+1     0000c400  _speed2            
+1     0000c480  _svgen_mf1         
+1     0000c3e0  _vhz1              
+abs   ffffffff  binit              
+0     00008000  cinit              
+0     000099d8  etext              
+abs   ffffffff  pinit              
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+page  address   name               
+----  -------   ----               
+0     00008000  ___cinit__         
+0     00008000  cinit              
+0     00009000  .text              
+0     00009000  ___text__          
+0     00009000  _main              
+0     0000933a  _A0                
+0     00009351  _B0                
+0     00009367  _C0                
+0     0000937d  _A1                
+0     0000938e  _A2                
+0     00009394  _A3                
+0     0000939a  _B1                
+0     000093a0  _B2                
+0     000093a6  _B3                
+0     000093ac  _C1                
+0     000093c1  _C2                
+0     000093c7  _C3                
+0     000093cd  _HVDMC_Protection  
+0     00009413  _MainISR           
+0     000095fd  _DeviceInit        
+0     0000973c  _WDogDisable       
+0     00009744  _PLLset            
+0     00009767  _PieCntlInit       
+0     00009786  _PieVectTableInit  
+0     000097a7  _MemCopy           
+0     000097bc  FS$$DIV            
+0     00009844  FD$$MPY            
+0     000098c7  _DLOG_4CH_init     
+0     000098d2  _DLOG_4CH_update   
+0     00009912  _c_int00           
+0     00009958  FD$$TOL            
+0     00009977  FS$$TOFD           
+0     00009993  __args_main        
+0     000099ac  C$$EXIT            
+0     000099ac  _abort             
+0     000099ae  _exit              
+0     000099c5  _ISR_ILLEGAL       
+0     000099cf  __register_unlock  
+0     000099d3  __register_lock    
+0     000099d7  __nop              
+0     000099d8  ___etext__         
+0     000099d8  etext              
+1     00000400  __stack            
+1     00000780  __STACK_END        
+1     0000c320  ___TI_cleanup_ptr  
+1     0000c322  ___TI_dtors_ptr    
+1     0000c324  __lock             
+1     0000c326  __unlock           
+1     0000c340  _BackTicker        
+1     0000c341  _ClosedLoopFlag    
+1     0000c342  _lsw               
+1     0000c343  _TripFlagDMC       
+1     0000c344  _DlogCh1           
+1     0000c345  _EnableFlag        
+1     0000c346  _SpeedLoopPrescaler
+1     0000c347  _DlogCh4           
+1     0000c348  _SpeedLoopCount    
+1     0000c349  _DlogCh3           
+1     0000c34a  _SerialCommsTimer  
+1     0000c34b  _DlogCh2           
+1     0000c34c  _IsrTicker         
+1     0000c34e  _SpeedRef          
+1     0000c350  _A_Task_Ptr        
+1     0000c352  _Alpha_State_Ptr   
+1     0000c354  _C_Task_Ptr        
+1     0000c356  _T                 
+1     0000c358  _B_Task_Ptr        
+1     0000c35a  _VTimer1           
+1     0000c35e  _VTimer2           
+1     0000c362  _cap1              
+1     0000c366  _VTimer0           
+1     0000c36a  _eQEP              
+1     0000c370  _pwmdac1           
+1     0000c376  _pwm1              
+1     0000c380  _eCAP              
+1     0000c38e  _ePWM              
+1     0000c39c  _TrigSel           
+1     0000c3ac  _ACQPS             
+1     0000c3c0  _rc1               
+1     0000c3d0  _ChSel             
+1     0000c3e0  _vhz1              
+1     0000c400  _speed2            
+1     0000c412  _qep1              
+1     0000c424  _speed1            
+1     0000c440  _dlog              
+1     0000c456  _pi_spd            
+1     0000c480  _svgen_mf1         
+abs   00000380  __STACK_SIZE       
+abs   ffffffff  ___binit__         
+abs   ffffffff  ___c_args__        
+abs   ffffffff  ___pinit__         
+abs   ffffffff  binit              
+abs   ffffffff  pinit              
+n/a   UNDEFED   _ADC_cal           
+n/a   UNDEFED   _AdcRegs           
+n/a   UNDEFED   _CpuTimer0Regs     
+n/a   UNDEFED   _CpuTimer1Regs     
+n/a   UNDEFED   _CpuTimer2Regs     
+n/a   UNDEFED   _DSP28x_usDelay    
+n/a   UNDEFED   _ECap1Regs         
+n/a   UNDEFED   _ECap2Regs         
+n/a   UNDEFED   _ECap3Regs         
+n/a   UNDEFED   _ECap4Regs         
+n/a   UNDEFED   _ECap5Regs         
+n/a   UNDEFED   _ECap6Regs         
+n/a   UNDEFED   _EPwm1Regs         
+n/a   UNDEFED   _EPwm2Regs         
+n/a   UNDEFED   _EPwm3Regs         
+n/a   UNDEFED   _EPwm4Regs         
+n/a   UNDEFED   _EPwm5Regs         
+n/a   UNDEFED   _EPwm6Regs         
+n/a   UNDEFED   _EQep1Regs         
+n/a   UNDEFED   _EQep2Regs         
+n/a   UNDEFED   _GpioCtrlRegs      
+n/a   UNDEFED   _GpioDataRegs      
+n/a   UNDEFED   _PieCtrlRegs       
+n/a   UNDEFED   _PieVectTable      
+n/a   UNDEFED   _SysCtrlRegs       
+n/a   UNDEFED   __IQ24div          
+n/a   UNDEFED   __IQ24sin          
+
+[120 symbols]

@@ -1,0 +1,9 @@
+A 600 RPM
+5_1 y 5_2 coluna tiempo coluna tension coluna tiempo coluna tension dos ficheros
+6_1 y 6_2
+
+a 850 RPM
+7_1 y 7_2
+8_1 y 8_2 tiempo de mostreo y periodo distintos
+
+Vdc 318
